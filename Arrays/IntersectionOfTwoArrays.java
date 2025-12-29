@@ -50,3 +50,27 @@ public class Intersectionoftwoarrays {
         System.out.println();
     }
 }
+//optimal-
+class Solution {
+    public int[] intersectionArray(int[] nums1, int[] nums2) {
+        int n1=nums1.length;
+        int n2=nums2.length;
+        int i=0;
+        int j=0;
+        List<Integer>ans=new ArrayList<>();
+        while(i<n1 && j<n2){
+            if(nums1[i]<nums2[j]) i++;
+            else if(nums2[j]<nums1[i]) j++;
+            else{
+                ans.add(nums1[i]);
+                i++;
+                j++;
+            }
+        }
+        int[] ansList=new int[ans.size()];
+        for(int k=0;k<ans.size();k++){
+            ansList[k]=ans.get(k);
+        }
+        return ansList;
+    }
+}

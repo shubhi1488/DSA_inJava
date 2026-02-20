@@ -8,9 +8,11 @@ public class SortLL {
             arr.add(temp.data);
             temp=temp.next;
         }
+        Collections.sort(arr);
         temp=head;
         for(int val:arr){
             temp.data=val;
+            temp=temp.next;
             
 
         }
